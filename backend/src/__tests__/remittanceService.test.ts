@@ -166,12 +166,12 @@ describe('remittanceService.createRemittance', () => {
   });
 });
 
-describe('remittanceService.getRemittances with filters', () => {
+describe("remittanceService.getRemittances with filters", () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('filters remittances by status', async () => {
+  it("filters remittances by status", async () => {
     mockQuery.mockResolvedValueOnce({
       rows: [
         {
