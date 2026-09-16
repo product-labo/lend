@@ -74,8 +74,8 @@ verification.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/LabsCrypt/remitlend.git
-   cd remitlend
+   git clone https://github.com/product-labo/lend.git
+   cd lend
    ```
 
 2. **Configure environment:**
