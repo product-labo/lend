@@ -9,6 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
   Cell,
+  TooltipContentProps,
 } from "recharts";
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/Card";
 
@@ -25,6 +26,22 @@ interface RiskTierChartProps {
 
 export function RiskTierChart({ data, className }: RiskTierChartProps) {
   const total = data.reduce((sum, d) => sum + d.count, 0);
+
+  const CustomTooltip = ({ active, payload }: TooltipContentProps) => {
+    if (active && payload && payload.length) {
+      const d = (payload[0] as unknown as { payload: RiskTierDataPoint }).payload;
+      const pct = total > 0 ? ((d.count / total) * 100).toFixed(1) : "0.0";
+      return (
+        <div className="rounded-lg border border-gray-200 bg-white p-3 shadow-lg dark:border-zinc-800 dark:bg-zinc-950">
+          <p className="text-sm font-medium text-gray-900 dark:text-zinc-100">{d.tier} Risk</p>
+          <p className="text-lg font-bold" style={{ color: d.color }}>
+            {d.count} loan{d.count !== 1 ? "s" : ""} ({pct}%)
+          </p>
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <Card className={className}>
@@ -50,25 +67,7 @@ export function RiskTierChart({ data, className }: RiskTierChartProps) {
               tickLine={{ stroke: "currentColor" }}
               className="text-xs text-gray-600 dark:text-zinc-400"
             />
-            <Tooltip
-              content={({ active, payload }: any) => {
-                if (active && payload && payload.length) {
-                  const d = (payload[0] as unknown as { payload: RiskTierDataPoint }).payload;
-                  const pct = total > 0 ? ((d.count / total) * 100).toFixed(1) : "0.0";
-                  return (
-                    <div className="rounded-lg border border-gray-200 bg-white p-3 shadow-lg dark:border-zinc-800 dark:bg-zinc-950">
-                      <p className="text-sm font-medium text-gray-900 dark:text-zinc-100">
-                        {d.tier} Risk
-                      </p>
-                      <p className="text-lg font-bold" style={{ color: d.color }}>
-                        {d.count} loan{d.count !== 1 ? "s" : ""} ({pct}%)
-                      </p>
-                    </div>
-                  );
-                }
-                return null;
-              }}
-            />
+            <Tooltip content={CustomTooltip} />
             <Bar dataKey="count" radius={[4, 4, 0, 0]} name="Loans">
               {data.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />

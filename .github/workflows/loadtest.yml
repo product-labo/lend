@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Run k6 baseline load test
-        uses: grafana/k6-action@v0.3.0
+        uses: grafana/k6-action@v0.3.1
         with:
           filename: scripts/loadtest/baseline.js
         env:
