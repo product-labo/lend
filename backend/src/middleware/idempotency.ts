@@ -88,6 +88,8 @@ export const idempotencyMiddleware = async (
     return next();
   }
 
+  const safeKeyForLog = key.replace(/[\r\n]/g, '');
+
   try {
     const { fingerprint } = computeFingerprint(req);
     const cacheKey = `idemp:${key}`;
@@ -99,7 +101,7 @@ export const idempotencyMiddleware = async (
       // created by. Reusing the key for a different method/path/body is a
       // conflict, not a replay — reject rather than serve the wrong result.
       if (cached.fingerprint !== fingerprint) {
-        logger.warn(`Idempotency key ${key} reused for a different request`, {
+        logger.warn(`Idempotency key ${safeKeyForLog} reused for a different request`, {
           url: req.originalUrl,
           method: req.method,
           expectedFingerprint: cached.fingerprint,
@@ -112,7 +114,7 @@ export const idempotencyMiddleware = async (
         return;
       }
 
-      logger.info(`Idempotency hit for key: ${key}`, {
+      logger.info(`Idempotency hit for key: ${safeKeyForLog}`, {
         url: req.originalUrl,
         method: req.method,
       });
@@ -206,7 +208,7 @@ export const idempotencyMiddleware = async (
 
     next();
   } catch (error) {
-    logger.error('Error in idempotency middleware', { error, key });
+    logger.error('Error in idempotency middleware', { error, key: safeKeyForLog });
     next();
   }
 };
