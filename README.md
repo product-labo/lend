@@ -1,4 +1,4 @@
-# RemitLend
+# Lend
 
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 [![Frontend: Next.js](https://img.shields.io/badge/Frontend-Next.js-black?logo=next.js)](https://nextjs.org/)
@@ -6,23 +6,22 @@
 [![Smart Contracts: Soroban](https://img.shields.io/badge/Smart_Contracts-Soroban-orange)](https://soroban.stellar.org/)
 [![Stellar](https://img.shields.io/badge/Stellar-Soroban-purple)](https://stellar.org)
 
-Lend treats remittance history as credit history. Migrant workers prove their financial reliability through monthly cross-border transfers, allowing them to receive fair loans without predatory fees. In return, lenders earn transparent yield powered by the Stellar network.
+Lend for remittance
 
 ## ✨ Key Features
 
-### For Borrowers
-- **Credit Building**: Convert your existing remittance history into an actionable credit score.
-- **Fair Rates**: Access loans with transparent, non-predatory interest rates.
-- **Self-Custody**: Maintain full control of your assets using Stellar wallets.
+- **Credit Building**: 
+- **Fair Rates**
+- **Self-Custody**: 
 
 ### For Lenders
-- **Transparent Yield**: Earn interest by providing liquidity to audited borrowing pools.
-- **Risk Assessment**: Make informed decisions based on verifiable, on-chain remittance proofs (Remittance NFTs).
+- **Transparent Yield**: 
+- **Risk Assessment**:
 
 ### Technical Highlights
-- **NFT-Based Collateral**: Remittance NFTs serve as proof of reliability and loan collateral.
-- **Decentralized Lending Pools**: Lenders provide liquidity and earn transparent yields.
-- **Transparent & Auditable**: All transactions and loan terms recorded on-chain.
+- **NFT-Based Collateral**: 
+- **Decentralized Lending Pools**: 
+- **Transparent & Auditable**: 
 
 ## 🏗 Project Structure
 
