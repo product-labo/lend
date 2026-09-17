@@ -73,7 +73,7 @@ export async function generateChallenge(publicKey: string): Promise<ChallengeMes
   const nonce = crypto.randomBytes(32).toString('hex');
   const timestamp = Date.now();
 
-  const message = `Sign this message to authenticate with RemitLend.\n\nNonce: ${nonce}\nTimestamp: ${timestamp}\n\nThis request will expire in 5 minutes.`;
+  const message = `Sign this message to authenticate with Lend.\n\nNonce: ${nonce}\nTimestamp: ${timestamp}\n\nThis request will expire in 5 minutes.`;
   const stored = await storeChallengeNonce(publicKey, nonce, message, timestamp);
   if (!stored) {
     throw new Error('Failed to store challenge nonce');

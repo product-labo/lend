@@ -1,4 +1,4 @@
-# RemitLend
+# Lend
 
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 [![Frontend: Next.js](https://img.shields.io/badge/Frontend-Next.js-black?logo=next.js)](https://nextjs.org/)
@@ -6,7 +6,7 @@
 [![Smart Contracts: Soroban](https://img.shields.io/badge/Smart_Contracts-Soroban-orange)](https://soroban.stellar.org/)
 [![Stellar](https://img.shields.io/badge/Stellar-Soroban-purple)](https://stellar.org)
 
-RemitLend treats remittance history as credit history. Migrant workers prove their financial reliability through monthly cross-border transfers, allowing them to receive fair loans without predatory fees. In return, lenders earn transparent yield powered by the Stellar network.
+Lend treats remittance history as credit history. Migrant workers prove their financial reliability through monthly cross-border transfers, allowing them to receive fair loans without predatory fees. In return, lenders earn transparent yield powered by the Stellar network.
 
 ## ✨ Key Features
 
@@ -47,7 +47,7 @@ Both endpoints are gated to non-production environments (`NODE_ENV !== "producti
 
 ### Webhooks
 
-RemitLend supports real-time event notifications via webhooks. See the
+Lend supports real-time event notifications via webhooks. See the
 [Webhook Integration Guide](docs/webhooks.md) for details on subscribing,
 event payloads, retry semantics, circuit-breaker behavior, and HMAC signature
 verification.
@@ -121,7 +121,7 @@ verification.
    CORS_ALLOWED_ORIGINS=http://localhost:3000
    PORT=3001
    NODE_ENV=development
-   DATABASE_URL=postgres://postgres:postgres@localhost:5432/remitlend
+   DATABASE_URL=postgres://postgres:postgres@localhost:5432/lend
    ```
 
 4. **Apply database migrations** (creates `scores`, `loan_events`, `indexer_state`, and other tables):

@@ -1,8 +1,8 @@
-# RemitLend – DeFi Gamification Dashboard
+# Lend – DeFi Gamification Dashboard
 
 ## Project Overview
 
-RemitLend transforms traditional lending and borrowing into an immersive, quest-driven experience. The goal is to bridge the gap between complex Web3 financial data and a high-engagement RPG-style interface — making DeFi accessible, rewarding, and sticky.
+Lend transforms traditional lending and borrowing into an immersive, quest-driven experience. The goal is to bridge the gap between complex Web3 financial data and a high-engagement RPG-style interface — making DeFi accessible, rewarding, and sticky.
 
 **Related documentation:**
 - [Lender Dashboard Design](../LENDERS_DASHBOARD_DESIGN.md)

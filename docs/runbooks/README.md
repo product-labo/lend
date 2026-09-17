@@ -1,6 +1,6 @@
 # Runbooks
 
-Operational runbooks for on-call engineers working on the RemitLend platform.
+Operational runbooks for on-call engineers working on the Lend platform.
 
 ## Index
 
@@ -66,22 +66,22 @@ The workflow publishes staging images to GHCR:
 ### Backend
 
 ```text
-ghcr.io/<owner>/remitlend-backend:staging-latest
-ghcr.io/<owner>/remitlend-backend:staging-<commit-sha>
+ghcr.io/<owner>/lend-backend:staging-latest
+ghcr.io/<owner>/lend-backend:staging-<commit-sha>
 ```
 
 ### Frontend
 
 ```text
-ghcr.io/<owner>/remitlend-frontend:staging-latest
-ghcr.io/<owner>/remitlend-frontend:staging-<commit-sha>
+ghcr.io/<owner>/lend-frontend:staging-latest
+ghcr.io/<owner>/lend-frontend:staging-<commit-sha>
 ```
 
 Before pushing new images, the workflow backs up the current staging images as:
 
 ```text
-ghcr.io/<owner>/remitlend-backend:staging-previous
-ghcr.io/<owner>/remitlend-frontend:staging-previous
+ghcr.io/<owner>/lend-backend:staging-previous
+ghcr.io/<owner>/lend-frontend:staging-previous
 ```
 
 These tags are used for rollback.
@@ -123,7 +123,7 @@ postgres:16-alpine
 Database name:
 
 ```text
-remitlend
+lend
 ```
 
 ### Redis
@@ -189,7 +189,7 @@ ssh -p <port> <user>@<host>
 Navigate to the deployment directory:
 
 ```bash
-cd ~/remitlend
+cd ~/lend
 ```
 
 ### Backend Logs
@@ -254,7 +254,7 @@ ssh -p <port> <user>@<host>
 ### 2. Change to the Deployment Directory
 
 ```bash
-cd ~/remitlend
+cd ~/lend
 ```
 
 ### 3. Verify Rollback Compose File Exists
@@ -266,8 +266,8 @@ ls deploy/docker-compose.staging.rollback.yml
 ### 4. Pull Previous Images
 
 ```bash
-docker pull ghcr.io/<owner>/remitlend-backend:staging-previous
-docker pull ghcr.io/<owner>/remitlend-frontend:staging-previous
+docker pull ghcr.io/<owner>/lend-backend:staging-previous
+docker pull ghcr.io/<owner>/lend-frontend:staging-previous
 ```
 
 ### 5. Deploy Previous Version
