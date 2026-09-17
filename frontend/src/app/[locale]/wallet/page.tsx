@@ -333,7 +333,7 @@ function TransactionHistoryCard({
       };
     });
 
-    downloadCsv(`remitlend-activity-${today}.csv`, rowsToCsv(rows));
+    downloadCsv(`lend-activity-${today}.csv`, rowsToCsv(rows));
   }
 
   return (

@@ -8,8 +8,8 @@ type PageMetadataInput = {
 };
 
 const LOCALES = ["en", "es", "tl"] as const;
-const DEFAULT_SITE_URL = "https://remitlend.com";
-const SITE_NAME = "RemitLend";
+const DEFAULT_SITE_URL = "https://lend.com";
+const SITE_NAME = "Lend";
 const OG_IMAGE_PATH = "/og-image.png";
 
 export function getSiteUrl() {
