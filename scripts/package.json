@@ -1,7 +1,7 @@
 {
-  "name": "remitlend-scripts",
+  "name": "lend-scripts",
   "version": "1.0.0",
-  "description": "Deployment and maintenance scripts for RemitLend contracts",
+  "description": "Deployment and maintenance scripts for Lend contracts",
   "main": "index.js",
   "scripts": {
     "deploy": "ts-node deploy.ts",
