@@ -1,6 +1,6 @@
 {
-  "name": "RemitLend",
-  "short_name": "RemitLend",
+  "name": "Lend",
+  "short_name": "Lend",
   "description": "Decentralized lending for migrant workers — remittance-based credit scoring",
   "start_url": "/en",
   "display": "standalone",

@@ -1,4 +1,4 @@
-# RemitLend Deployment Scripts
+# Lend Deployment Scripts
 
 Automated scripts for building and deploying Soroban smart contracts.
 

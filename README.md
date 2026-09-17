@@ -6,22 +6,23 @@
 [![Smart Contracts: Soroban](https://img.shields.io/badge/Smart_Contracts-Soroban-orange)](https://soroban.stellar.org/)
 [![Stellar](https://img.shields.io/badge/Stellar-Soroban-purple)](https://stellar.org)
 
-Lend for remittance
+Lend treats remittance history as credit history. Migrant workers prove their financial reliability through monthly cross-border transfers, allowing them to receive fair loans without predatory fees. In return, lenders earn transparent yield powered by the Stellar network.
 
 ## ✨ Key Features
 
-- **Credit Building**: 
-- **Fair Rates**
-- **Self-Custody**: 
+### For Borrowers
+- **Credit Building**: Convert your existing remittance history into an actionable credit score.
+- **Fair Rates**: Access loans with transparent, non-predatory interest rates.
+- **Self-Custody**: Maintain full control of your assets using Stellar wallets.
 
 ### For Lenders
-- **Transparent Yield**: 
-- **Risk Assessment**:
+- **Transparent Yield**: Earn interest by providing liquidity to audited borrowing pools.
+- **Risk Assessment**: Make informed decisions based on verifiable, on-chain remittance proofs (Remittance NFTs).
 
 ### Technical Highlights
-- **NFT-Based Collateral**: 
-- **Decentralized Lending Pools**: 
-- **Transparent & Auditable**: 
+- **NFT-Based Collateral**: Remittance NFTs serve as proof of reliability and loan collateral.
+- **Decentralized Lending Pools**: Lenders provide liquidity and earn transparent yields.
+- **Transparent & Auditable**: All transactions and loan terms recorded on-chain.
 
 ## 🏗 Project Structure
 
@@ -46,7 +47,7 @@ Both endpoints are gated to non-production environments (`NODE_ENV !== "producti
 
 ### Webhooks
 
-RemitLend supports real-time event notifications via webhooks. See the
+Lend supports real-time event notifications via webhooks. See the
 [Webhook Integration Guide](docs/webhooks.md) for details on subscribing,
 event payloads, retry semantics, circuit-breaker behavior, and HMAC signature
 verification.
@@ -120,7 +121,7 @@ verification.
    CORS_ALLOWED_ORIGINS=http://localhost:3000
    PORT=3001
    NODE_ENV=development
-   DATABASE_URL=postgres://postgres:postgres@localhost:5432/remitlend
+   DATABASE_URL=postgres://postgres:postgres@localhost:5432/lend
    ```
 
 4. **Apply database migrations** (creates `scores`, `loan_events`, `indexer_state`, and other tables):

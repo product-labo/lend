@@ -25,7 +25,7 @@ function computeWasmHash(wasm: Buffer): Buffer {
 
 // Deterministic per-contract salt so re-runs don't stomp each other's addresses.
 function contractSalt(name: string): Buffer {
-    return createHash('sha256').update(`remitlend:${name}`).digest();
+    return createHash('sha256').update(`lend:${name}`).digest();
 }
 
 // Extract the newly created contract ID from transaction result metadata.
@@ -175,7 +175,7 @@ async function main() {
     const server = new Rpc.Server(config.rpcUrl);
     const passphrase = config.networkPassphrase;
 
-    console.log(`\nRemitLend deployment → ${network}`);
+    console.log(`\nLend deployment → ${network}`);
     console.log(`admin : ${adminAddr}`);
     console.log(`token : ${config.token}\n`);
 
@@ -271,7 +271,7 @@ async function main() {
 
     const frontendEnvBlock = [
         ``,
-        `# RemitLend contracts — ${network} — ${new Date().toISOString()}`,
+        `# Lend contracts — ${network} — ${new Date().toISOString()}`,
         `NEXT_PUBLIC_NFT_CONTRACT_ID=${nftContractId}`,
         `NEXT_PUBLIC_POOL_CONTRACT_ID=${poolContractId}`,
         `NEXT_PUBLIC_MANAGER_CONTRACT_ID=${managerContractId}`,
@@ -280,7 +280,7 @@ async function main() {
 
     const backendEnvBlock = [
         ``,
-        `# RemitLend contracts — ${network} — ${new Date().toISOString()}`,
+        `# Lend contracts — ${network} — ${new Date().toISOString()}`,
         `REMITTANCE_NFT_CONTRACT_ID=${nftContractId}`,
         `LENDING_POOL_CONTRACT_ID=${poolContractId}`,
         `LOAN_MANAGER_CONTRACT_ID=${managerContractId}`,

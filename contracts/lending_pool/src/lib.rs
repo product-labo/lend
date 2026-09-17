@@ -38,7 +38,7 @@
 //! the token address, allowing independent accounting per token. For example, one instance
 //! can manage USDC, USDT, and BRL pools simultaneously with separate share prices and balances.
 
-// Lending pool contract for RemitLend.
+// Lending pool contract for Lend.
 use soroban_sdk::token::Client as TokenClient;
 use soroban_sdk::{
     contract, contracterror, contractimpl, contracttype, Address, BytesN, Env, Symbol,
