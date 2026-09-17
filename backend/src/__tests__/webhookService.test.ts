@@ -195,7 +195,7 @@ describe('WebhookService', () => {
   });
 
   describe('HMAC signature', () => {
-    it('sets X-RemitLend-Signature with sha256= prefix for a known body+secret', async () => {
+    it('sets X-Lend-Signature with sha256= prefix for a known body+secret', async () => {
       const secret = 'test-secret-key';
       const crypto = await import('node:crypto');
 
@@ -210,7 +210,7 @@ describe('WebhookService', () => {
           .createHmac('sha256', secret)
           .update(opts.body as string)
           .digest('hex');
-        expect(hdrs['x-remitlend-signature']).toBe(`sha256=${expectedHex}`);
+        expect(hdrs['x-lend-signature']).toBe(`sha256=${expectedHex}`);
         return { ok: true, status: 200 };
       });
       global.fetch = fetchMock as unknown as typeof fetch;
@@ -266,7 +266,7 @@ describe('WebhookService', () => {
 
       const callOpts = fetchMock.mock.calls[0]![1] as RequestInit;
       const hdrs = callOpts.headers as Record<string, string>;
-      const sigHeader = hdrs['x-remitlend-signature'];
+      const sigHeader = hdrs['x-lend-signature'];
 
       // Must start with the algorithm prefix
       expect(sigHeader).toMatch(/^sha256=[a-f0-9]{64}$/);
@@ -278,7 +278,7 @@ describe('WebhookService', () => {
       expect(sigHeader).toBe(`sha256=${expectedHex}`);
     });
 
-    it('omits X-RemitLend-Signature when no secret is configured', async () => {
+    it('omits X-Lend-Signature when no secret is configured', async () => {
       const fetchMock = jest.fn<(...args: unknown[]) => Promise<{ ok: boolean; status: number }>>();
       fetchMock.mockResolvedValue({ ok: true, status: 200 });
       global.fetch = fetchMock as unknown as typeof fetch;
@@ -305,7 +305,7 @@ describe('WebhookService', () => {
 
       const callOpts = fetchMock.mock.calls[0]![1] as RequestInit;
       const hdrs = callOpts.headers as Record<string, string>;
-      expect(hdrs['x-remitlend-signature']).toBeUndefined();
+      expect(hdrs['x-lend-signature']).toBeUndefined();
     });
   });
 

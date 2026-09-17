@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildPageMetadata({
     locale,
     path: "/lend",
-    title: "Lender Portfolio | RemitLend",
+    title: "Lender Portfolio | Lend",
     description:
       "Monitor pool performance, funded loans, deposits, withdrawals, and expected lender yield.",
   });
