@@ -316,7 +316,7 @@ export const submitRemittanceTransaction = asyncHandler(async (req: Request, res
     const isClientError =
       error instanceof AppError && error.statusCode >= 400 && error.statusCode < 500;
 
-    if (id && !isClientError) {
+    if (!isClientError) {
       await remittanceService.updateRemittanceStatus(
         id,
         'failed',
