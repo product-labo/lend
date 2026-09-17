@@ -1,6 +1,6 @@
-# RemitLend Backend API
+# Lend Backend API
 
-Express.js backend service for the RemitLend platform, providing API endpoints for credit scoring, remittance simulation, and NFT metadata management.
+Express.js backend service for the Lend platform, providing API endpoints for credit scoring, remittance simulation, and NFT metadata management.
 
 ## Overview
 
@@ -463,10 +463,10 @@ export const simulateRemittanceSchema = z.object({
 
 ```bash
 # Build image
-docker build -t remitlend-backend .
+docker build -t lend-backend .
 
 # Run container
-docker run -p 3001:3001 --env-file .env remitlend-backend
+docker run -p 3001:3001 --env-file .env lend-backend
 ```
 
 ### Docker Compose
