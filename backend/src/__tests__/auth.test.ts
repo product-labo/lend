@@ -331,7 +331,7 @@ describe('authService unit tests', () => {
       const keypair = Keypair.random();
       const nonce = 'a'.repeat(64);
       const timestamp = Date.now();
-      const message = `Sign this message to authenticate with RemitLend.\n\nNonce: ${nonce}\nTimestamp: ${timestamp}\n\nThis request will expire in 5 minutes.`;
+      const message = `Sign this message to authenticate with Lend.\n\nNonce: ${nonce}\nTimestamp: ${timestamp}\n\nThis request will expire in 5 minutes.`;
 
       await expect(
         authService.verifyAndConsumeChallenge(keypair.publicKey(), message),
