@@ -1,6 +1,6 @@
-# RemitLend Frontend
+# Lend Frontend
 
-Next.js web application for the RemitLend platform, providing user interfaces for borrowers and lenders to interact with the decentralized lending protocol.
+Next.js web application for the Lend platform, providing user interfaces for borrowers and lenders to interact with the decentralized lending protocol.
 
 ## Overview
 
@@ -309,8 +309,8 @@ vercel
 ### Docker
 
 ```bash
-docker build -t remitlend-frontend .
-docker run -p 3000:3000 remitlend-frontend
+docker build -t lend-frontend .
+docker run -p 3000:3000 lend-frontend
 ```
 
 ### Environment Variables

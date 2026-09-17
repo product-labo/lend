@@ -1,6 +1,6 @@
-# RemitLend System Architecture
+# Lend System Architecture
 
-RemitLend is a decentralized lending platform built on the Stellar network using Soroban smart contracts. It leverages remittance history to establish creditworthiness for migrant workers who lack traditional credit history.
+Lend is a decentralized lending platform built on the Stellar network using Soroban smart contracts. It leverages remittance history to establish creditworthiness for migrant workers who lack traditional credit history.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ RemitLend is a decentralized lending platform built on the Stellar network using
 
 ## Overview
 
-RemitLend transforms the challenge of financial exclusion into an opportunity by treating consistent remittance payments as proof of creditworthiness. The system creates an on-chain credit score based on remittance history, mints it as an NFT, and uses it as collateral for loans from decentralized lending pools.
+Lend transforms the challenge of financial exclusion into an opportunity by treating consistent remittance payments as proof of creditworthiness. The system creates an on-chain credit score based on remittance history, mints it as an NFT, and uses it as collateral for loans from decentralized lending pools.
 
 ### System Architecture at a Glance
 
@@ -375,7 +375,7 @@ pub fn allocate_funds(env: Env, loan_id: u64, amount: i128) -> Result<(), Error>
 journey
     title Borrower's Journey to Get a Loan
     section Onboarding
-      Visit RemitLend: 5: Borrower
+      Visit Lend: 5: Borrower
       Connect Wallet: 4: Borrower
       View Dashboard: 5: Borrower
     section Credit Building
@@ -409,7 +409,7 @@ journey
 journey
     title Lender's Journey to Earn Yield
     section Onboarding
-      Visit RemitLend: 5: Lender
+      Visit Lend: 5: Lender
       Connect Wallet: 4: Lender
       View Pool Stats: 5: Lender
     section Deposit

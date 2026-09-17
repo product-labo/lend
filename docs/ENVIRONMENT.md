@@ -1,12 +1,12 @@
 # Environment Variable Reference
 
-This document lists every environment variable used by the RemitLend platform. Each table covers one package.
+This document lists every environment variable used by the Lend platform. Each table covers one package.
 
 ---
 
 ## Demo Mode
 
-RemitLend includes a **demo / sandbox mode** that lets frontend developers and
+Lend includes a **demo / sandbox mode** that lets frontend developers and
 integration testers exercise API routes without interacting with real contracts
 or payment rails.  When enabled, certain endpoints return mock data instead of
 calling on-chain logic.
@@ -39,7 +39,7 @@ stricter rate limit (10 requests/minute/IP) to prevent abuse.
 | `CORS_ALLOWED_ORIGINS` | ✓ | ✓ | ✓ | `http://localhost:3000,http://localhost:3001` | Comma-separated origins allowed by CORS | `backend/src/config/index.ts` |
 | `FRONTEND_URL` | ✓ | ✓ | ✓ | `http://localhost:3000` | Frontend base URL used for links | `backend/src/config/index.ts` |
 | `PORT` | ✓ | ✓ | ✓ | `3001` | HTTP port the API listens on | `backend/src/index.ts` |
-| `DATABASE_URL` | ✓ | ✓ | ✓ | `postgres://postgres:postgres@db:5432/remitlend` | PostgreSQL connection string | `backend/src/db/connection.js` |
+| `DATABASE_URL` | ✓ | ✓ | ✓ | `postgres://postgres:postgres@db:5432/lend` | PostgreSQL connection string | `backend/src/db/connection.js` |
 | `DB_CONN_TIMEOUT_MS` | — | ✓ | ✓ | `10000` | Pool connection timeout in ms; pool.connect() rejects instead of hanging | `backend/src/db/connection.ts` |
 | `DB_STATEMENT_TIMEOUT_MS` | — | ✓ | ✓ | `30000` | Per-query statement_timeout in ms; a stuck query never holds a connection indefinitely | `backend/src/db/connection.ts` |
 | `REDIS_URL` | ✓ | ✓ | ✓ | `redis://redis:6379` | Redis connection string | `backend/src/services/cacheService.ts` |
@@ -84,7 +84,7 @@ stricter rate limit (10 requests/minute/IP) to prevent abuse.
 | `ADMIN_WALLETS` | ✓ | ✓ | ✓ | — | Comma-separated Stellar public keys granted the `admin` role (`admin:all` scope). **Security-critical**: any wallet listed here receives full admin privileges. Unlisted wallets default to `borrower`. | `backend/src/auth/rbac.ts` |
 | `LENDER_WALLETS` | ✓ | ✓ | ✓ | — | Comma-separated Stellar public keys granted the `lender` role (`read:loans`, `read:pool` scopes). Unlisted wallets default to `borrower`. | `backend/src/auth/rbac.ts` |
 | `EXPOSE_STACK_TRACES` | — | — | — | `false` | When `"true"`, include stack traces in error responses. **Never enable in production.** | `backend/src/middleware/errorHandler.ts` |
-| `JWT_COOKIE_NAME` | ✓ | ✓ | ✓ | `remitlend_jwt` | Name of the HTTP cookie used to transport the JWT token | `backend/src/middleware/jwtAuth.ts` |
+| `JWT_COOKIE_NAME` | ✓ | ✓ | ✓ | `lend_jwt` | Name of the HTTP cookie used to transport the JWT token | `backend/src/middleware/jwtAuth.ts` |
 | `WEBHOOK_REQUEST_TIMEOUT_MS` | ✓ | ✓ | ✓ | `30000` | Outgoing webhook request timeout | `backend/src/services/webhookService.ts` |
 | `SENTRY_DSN` | — | ✓ | ✓ | — | Sentry DSN for backend error tracking | `backend/src/app.ts` |
 | `NOTIFICATION_RETENTION_DAYS` | ✓ | ✓ | ✓ | `90` | Days to keep unread notifications | `backend/src/services/notificationService.ts` |
@@ -104,7 +104,7 @@ stricter rate limit (10 requests/minute/IP) to prevent abuse.
 | Variable                           | Dev | Staging | Prod | Default                                   | Description                                            | Source                                      |
 | ---------------------------------- | --- | ------- | ---- | ----------------------------------------- | ------------------------------------------------------ | ------------------------------------------- |
 | `NEXT_PUBLIC_API_URL`              | ✓   | ✓       | ✓    | `http://localhost:3001`                   | Backend API base URL                                   | `frontend/src/app/hooks/useApi.ts`          |
-| `NEXT_PUBLIC_APP_URL`              | ✓   | ✓       | ✓    | `https://remitlend.com`                   | Public-facing app URL used for absolute links          | `frontend/src/lib/canonicalUrl.ts`          |
+| `NEXT_PUBLIC_APP_URL`              | ✓   | ✓       | ✓    | `https://lend.com`                   | Public-facing app URL used for absolute links          | `frontend/src/lib/canonicalUrl.ts`          |
 | `NEXT_PUBLIC_SENTRY_DSN`           | —   | ✓       | ✓    | —                                         | Sentry DSN for frontend error tracking                 | `frontend/src/sentry.client.config.ts`      |
 | `SENTRY_DSN`                       | —   | ✓       | ✓    | —                                         | Sentry DSN server-side                                 | `frontend/src/sentry.server.config.ts`      |
 | `SENTRY_ORG`                       | —   | ✓       | ✓    | —                                         | Sentry organization slug                               | `frontend/sentry.client.config.ts`          |
